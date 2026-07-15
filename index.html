@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#fbfbf9"/>
 <meta name="author" content="Scott Hsieh (syhlion)"/>
 <meta name="description" content="Scott Hsieh (syhlion) — Backend engineer &amp; architect. 13+ years building game platforms, hospitality channel managers, and distributed systems in Golang."/>
 <title>Scott Hsieh (syhlion) — Backend Engineer</title>
@@ -22,16 +23,17 @@ gtag('config', 'G-BQFW1KL5N9');
 
 <style>
 :root {
-  --ground: #0a0b0d;
-  --surface-1: #14161a;
-  --surface-2: #1c1f24;
-  --hairline: rgba(255, 255, 255, 0.07);
-  --hairline-strong: rgba(255, 255, 255, 0.14);
-  --text-1: #edeff2;
-  --text-2: #9aa3ad;
-  --text-3: #667080;
-  --accent: #54c6b5;
-  --accent-dim: rgba(84, 198, 181, 0.12);
+  --ground: #fbfbf9;
+  --surface-1: #ffffff;
+  --surface-2: #f4f5f3;
+  --hairline: rgba(20, 28, 32, 0.09);
+  --hairline-strong: rgba(20, 28, 32, 0.18);
+  --text-1: #1d2429;
+  --text-2: #4c575f;
+  --text-3: #87929b;
+  --accent: #0c8471;
+  --accent-dim: rgba(12, 132, 113, 0.09);
+  --card-shadow: 0 1px 2px rgba(16, 24, 32, 0.04);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: "Noto Sans TC", "JetBrains Mono", system-ui, sans-serif;
 }
@@ -124,9 +126,18 @@ body {
   font-size: clamp(16px, 2.4vw, 19px);
   color: var(--text-2);
   max-width: 560px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .hero .tagline em { color: var(--accent); font-style: normal; }
+
+.motto {
+  border-left: 2px solid var(--accent);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 28px;
+  font-size: 15px;
+  color: var(--text-2);
+}
+.motto span { display: block; }
 
 .links { display: flex; flex-wrap: wrap; gap: 10px; }
 .links a {
@@ -175,9 +186,11 @@ section { margin-bottom: 72px; }
   border: 1px solid var(--hairline);
   border-radius: 12px;
   padding: 18px 20px;
+  box-shadow: var(--card-shadow);
   transition: border-color 150ms ease-out;
 }
 .hl-card:hover { border-color: var(--hairline-strong); }
+.hl-card.wide { grid-column: 1 / -1; }
 .hl-card h3 {
   font-size: 15px;
   font-weight: 700;
@@ -273,6 +286,7 @@ section { margin-bottom: 72px; }
   border: 1px solid var(--hairline);
   border-radius: 12px;
   padding: 18px 20px;
+  box-shadow: var(--card-shadow);
   transition: border-color 150ms ease-out, transform 150ms ease-out;
 }
 .repo:hover { border-color: var(--accent); transform: translateY(-2px); }
@@ -357,6 +371,10 @@ footer .cursor {
     <div class="prompt"><span class="dollar">$</span> whoami</div>
     <h1>Scott Hsieh <span class="alias">(syhlion)</span></h1>
     <p class="tagline" data-key="tagline"></p>
+    <blockquote class="motto">
+      <span data-key="quote1"></span>
+      <span data-key="quote2"></span>
+    </blockquote>
     <div class="links">
       <a href="https://blog.syhlion.tw" target="_blank" rel="noopener">blog.syhlion.tw<span class="arrow">↗</span></a>
       <a href="https://www.linkedin.com/in/syhlion" target="_blank" rel="noopener">linkedin/syhlion<span class="arrow">↗</span></a>
@@ -405,6 +423,8 @@ footer .cursor {
 const I18N = {
   zh: {
     tagline: "後端工程師／架構師。13+ 年後端經驗、8 年 Golang，專注於分散式系統、高併發即時服務與雲端基礎架構。",
+    quote1: "沒有 100 分的架構，只有最適合的架構；",
+    quote2: "沒有 100 分的方案，只有最適合的方案。",
     sec_highlight: "highlight",
     sec_experience: "experience",
     sec_skills: "skills",
@@ -416,6 +436,8 @@ const I18N = {
   },
   en: {
     tagline: "Backend engineer & architect. 13+ years in backend, 8 years in Golang — distributed systems, high-concurrency realtime services, and cloud infrastructure.",
+    quote1: "There is no perfect architecture — only the one that fits;",
+    quote2: "no perfect solution — only the one that fits.",
     sec_highlight: "highlight",
     sec_experience: "experience",
     sec_skills: "skills",
@@ -444,6 +466,11 @@ const HIGHLIGHTS = [
     zh: { t: "雲端與容器化運維", d: "精通 GCP／AWS、Kubernetes、Docker、Helm 與 Istio，實現多雲部署與自動化彈性伸縮。" },
     en: { t: "Cloud & containers", d: "GCP/AWS, Kubernetes, Docker, Helm, and Istio — multi-cloud deployments with automated scaling." },
   },
+  {
+    wide: true,
+    zh: { t: "AI 導入評估與協作", d: "評估並導入 AI agent 工具鏈到工程流程——架構知識庫、部署查核、線上排查、報表自動化。核心信念：人與 AI 應該是協作加速，而不是誰取代誰。" },
+    en: { t: "AI adoption & collaboration", d: "Evaluates and integrates AI agent toolchains into engineering workflows — architecture knowledge bases, deployment audits, production debugging, automated reporting. Core belief: humans and AI accelerate each other through collaboration — neither replaces the other." },
+  },
 ];
 
 const JOBS = [
@@ -455,9 +482,9 @@ const JOBS = [
       dept: "系統研發部 — 線上遊戲供應商中間層平台（帳務／注單核心、多環境 K8s 部署、16+ repo 多語言系統）的架構治理與技術營運",
       items: [
         "架構知識治理：從零建立涵蓋 16+ repo（C#/.NET、Node.js、Go、Dataform）的架構知識庫——業務流程、服務俯瞰圖、部署事實矩陣、資料儲存導覽；建立「以 proto 契約＋程式碼＋實際叢集部署為真相來源」的文件校正流程。",
-        "對外串接文件重建：主導重寫遊戲商串接文件（平台方 HTTP 接口手冊 9 章＋遊戲方 gRPC 共用規範與 12 個工作室，約 200+ 頁），並制定內外資訊隔離的發佈規範。",
-        "雲端成本優化：主導 MongoDB Atlas 與 GCP（GKE/BigQuery/Cloud NAT）成本分析，定位每月可節省約 15–25% 的具體槓桿；單項 BigQuery 資料品質檢核改寫後掃描量降低 92%，並追根資料庫寫入放大是機型無法降級的根因。",
-        "資料架構重構提案：盤點資料湖各管線（CDC→Kafka→PostgreSQL/BigQuery）的實際讀者與查詢形態，提出「儲存形態跟著查詢形態走」的重構方案，避免引入不必要的新資料庫。",
+        "對外串接文件重建：主導重寫遊戲商串接文件（平台方 HTTP 接口手冊 9 章＋遊戲方 gRPC 共用規範與 12 個工作室，約 200+ 頁）。",
+        "雲端成本分析：分析 MongoDB Atlas 與 GCP（GKE/BigQuery）成本結構並提出優化方向；其中單項 BigQuery 資料品質檢核經改寫後掃描量降低 92%。",
+        "資料架構重構研究：盤點資料湖管線（CDC→Kafka→PostgreSQL/BigQuery）的使用現況與查詢形態，研擬「儲存形態跟著查詢形態走」的重構方向（進行中）。",
         "線上事故根因分析：多起生產事故深度 RCA（V8 陣列上限 crash、跨服務錯誤碼映射缺漏的帳務缺陷、建索引卡死 startup probe 的 CrashLoop 等）；建立跨 8 個環境的版本查核與 log 排查工具鏈。",
         "AI 工程效率導入：設計並落地團隊的 AI agent skill 生態（唯讀架構知識底座 → RD 操作層 → 管理層），涵蓋部署查核、叢集/ELK 排查、日結週報自動化與 PM 分診工作流，並確立知識庫與 workflow 的擁有權切分。",
       ],
@@ -467,9 +494,9 @@ const JOBS = [
       dept: "System R&D Dept. — architecture governance & technical operations for an online game provider middleware platform (wallet/wager core, multi-env K8s, 16+ polyglot repos)",
       items: [
         "Architecture knowledge governance: built from scratch a knowledge base covering 16+ repos (C#/.NET, Node.js, Go, Dataform) — business flows, service maps, deployment fact matrix, data storage guide — with a doc-verification process using proto contracts, code, and live cluster state as the source of truth.",
-        "External integration docs rebuild: led the rewrite of game-provider integration docs (9-chapter platform HTTP manual + shared gRPC spec across 12 studios, 200+ pages), with publishing rules that isolate internal information.",
-        "Cloud cost optimization: led MongoDB Atlas and GCP (GKE/BigQuery/Cloud NAT) cost analysis, identifying 15–25% monthly savings levers; one BigQuery data-quality check was rewritten to cut scan volume by 92%; traced database write amplification as the root cause blocking instance downgrades.",
-        "Data architecture refactoring proposal: audited data-lake pipelines (CDC→Kafka→PostgreSQL/BigQuery) by actual readers and query shapes, proposing a 'storage follows query shape' plan that avoids introducing unnecessary new databases.",
+        "External integration docs rebuild: led the rewrite of game-provider integration docs (9-chapter platform HTTP manual + shared gRPC spec across 12 studios, 200+ pages).",
+        "Cloud cost analysis: analyzed MongoDB Atlas and GCP (GKE/BigQuery) cost structure and proposed optimizations; one BigQuery data-quality check was rewritten to cut scan volume by 92%.",
+        "Data architecture refactoring research (in progress): surveying data-lake pipelines (CDC→Kafka→PostgreSQL/BigQuery) by usage and query shapes, drafting a 'storage follows query shape' direction.",
         "Production incident RCA: deep root-cause analyses (a crash from exceeding V8's array limit, a billing defect from missing cross-service error-code mapping, a CrashLoop from index builds blocking startup probes); built version-audit and log tooling across 8 environments.",
         "AI engineering enablement: designed and shipped the team's AI agent skill ecosystem (read-only architecture base → RD ops layer → management layer), covering deployment audits, cluster/ELK debugging, automated dev reports, and a PM triage workflow, with clear knowledge/workflow ownership boundaries.",
       ],
@@ -572,6 +599,7 @@ const SKILLS = [
   { label: "infra", chips: ["Kubernetes", "Docker", "Helm", "Istio", "Nginx", "ELK"], hot: ["Kubernetes"] },
   { label: "cloud", chips: ["GCP", "AWS"], hot: [] },
   { label: "pipeline", chips: ["Drone CI", "NSQ", "Git"], hot: [] },
+  { label: "ai", chips: ["AI Agent Toolchain", "Claude Code", "Workflow Automation"], hot: ["AI Agent Toolchain"] },
   { label: "others", chips: ["DevOps", "Software Architecture"], hot: [] },
 ];
 
@@ -626,7 +654,7 @@ function render(lang) {
 
   document.getElementById("highlights").innerHTML = HIGHLIGHTS.map((h) => {
     const c = h[lang];
-    return `<div class="hl-card"><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p></div>`;
+    return `<div class="hl-card${h.wide ? " wide" : ""}"><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p></div>`;
   }).join("");
 
   document.getElementById("jobs").innerHTML = JOBS.map((j) => {
