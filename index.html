@@ -1,176 +1,691 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="author" content="Scott Hsieh (syhlion)"/>
+<meta name="description" content="Scott Hsieh (syhlion) — Backend engineer &amp; architect. 13+ years building game platforms, hospitality channel managers, and distributed systems in Golang."/>
+<title>Scott Hsieh (syhlion) — Backend Engineer</title>
 
-     <meta name="author" content="Scott (syhlion)">
-     <meta name="description" content="Scott (syhion)'s resume">
-     <title>Hi I am Scott (syhlion)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
 
-     <style type="text/css">
-        * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
-        .clear { clear: both; }
-        #page-wrap { width: 800px; margin: 40px auto 60px; }
-        #pic { float: right; margin: -30px 0 0 0; }
-        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
-        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
-        p { margin: 0 0 16px 0; }
-        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
-        a:hover { border-bottom-style: solid; color: black; }
-        ul { margin: 0 0 32px 17px; }
-        #objective { width: 500px; float: left; }
-        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-        .skills { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 280px; border-right: 1px solid #999;  }
-        .appraisals { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 500px; border-right: 1px solid #999;  }
-        .experience { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 1200px; border-right: 1px solid #999;  }
-        .hobbies { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 200; border-right: 1px solid #999;  }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFW1KL5N9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BQFW1KL5N9');
+</script>
 
-        dd { width: 600px; float: right; }
-        dd.clear { float: none; margin: 0; height: 15px; }
-        </style>
-        <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFW1KL5N9"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<style>
+:root {
+  --ground: #0a0b0d;
+  --surface-1: #14161a;
+  --surface-2: #1c1f24;
+  --hairline: rgba(255, 255, 255, 0.07);
+  --hairline-strong: rgba(255, 255, 255, 0.14);
+  --text-1: #edeff2;
+  --text-2: #9aa3ad;
+  --text-3: #667080;
+  --accent: #54c6b5;
+  --accent-dim: rgba(84, 198, 181, 0.12);
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Noto Sans TC", "JetBrains Mono", system-ui, sans-serif;
+}
 
-            gtag('config', 'G-BQFW1KL5N9');
-        </script>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--ground);
+  color: var(--text-1);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+::selection { background: var(--accent-dim); color: var(--accent); }
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 64px;
+}
+.topbar .host {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-3);
+}
+.topbar .host b { color: var(--text-2); font-weight: 500; }
+
+.lang-switch {
+  display: flex;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: color 150ms ease-out, background 150ms ease-out;
+}
+.lang-switch button + button { border-left: 1px solid var(--hairline-strong); }
+.lang-switch button:hover { color: var(--text-1); }
+.lang-switch button.active { background: var(--accent-dim); color: var(--accent); }
+.lang-switch button:focus-visible { outline: 1px solid var(--accent); outline-offset: -1px; }
+
+/* ---------- hero ---------- */
+.hero { margin-bottom: 80px; }
+.prompt {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text-3);
+  margin-bottom: 16px;
+}
+.prompt .dollar { color: var(--accent); }
+.hero h1 {
+  font-family: var(--mono);
+  font-size: clamp(34px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero .alias { color: var(--text-3); font-weight: 400; }
+.hero .tagline {
+  font-size: clamp(16px, 2.4vw, 19px);
+  color: var(--text-2);
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+.hero .tagline em { color: var(--accent); font-style: normal; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.links a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-2);
+  text-decoration: none;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  padding: 7px 14px;
+  transition: border-color 150ms ease-out, color 150ms ease-out, transform 150ms ease-out;
+}
+.links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.links a .arrow { color: var(--text-3); margin-left: 6px; }
+.links a:hover .arrow { color: var(--accent); }
+
+/* ---------- sections ---------- */
+section { margin-bottom: 72px; }
+.sec-title {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sec-title::before { content: "#"; color: var(--accent); }
+.sec-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+/* highlights */
+.hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hl-card {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: border-color 150ms ease-out;
+}
+.hl-card:hover { border-color: var(--hairline-strong); }
+.hl-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-1);
+}
+.hl-card p { font-size: 14px; color: var(--text-2); }
+
+/* experience timeline */
+.job {
+  position: relative;
+  padding: 0 0 40px 28px;
+  border-left: 1px solid var(--hairline);
+}
+.job:last-child { padding-bottom: 0; }
+.job::before {
+  content: "";
+  position: absolute;
+  left: -4.5px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ground);
+  border: 1.5px solid var(--text-3);
+}
+.job.current::before { background: var(--accent); border-color: var(--accent); }
+.job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-bottom: 2px; }
+.job-head h3 { font-size: 18px; font-weight: 700; }
+.job-role { color: var(--accent); font-size: 14px; font-weight: 500; }
+.job-time {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.job-dept { font-size: 13px; color: var(--text-3); margin-bottom: 10px; }
+.job ul { list-style: none; }
+.job li {
+  font-size: 14.5px;
+  color: var(--text-2);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.job li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+.job li a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+.job li a:hover { border-bottom-style: solid; }
+
+.phase { margin-top: 14px; padding-left: 14px; border-left: 1px solid var(--hairline-strong); }
+.phase-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; margin-bottom: 4px; }
+.phase-note { font-size: 13px; color: var(--text-3); }
+.phase .job-time { margin-left: auto; }
+@media (max-width: 640px) {
+  .phase .job-time { margin-left: 0; width: 100%; }
+}
+
+/* skills */
+.skill-rows { display: grid; gap: 10px; }
+.skill-row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: baseline; }
+.skill-row .label {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  text-align: right;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-2);
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 3px 10px;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+.chip:hover { color: var(--accent); border-color: var(--accent); }
+.chip.hot { color: var(--accent); border-color: rgba(84, 198, 181, 0.4); background: var(--accent-dim); }
+
+/* open source */
+.repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.repo {
+  display: block;
+  text-decoration: none;
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: border-color 150ms ease-out, transform 150ms ease-out;
+}
+.repo:hover { border-color: var(--accent); transform: translateY(-2px); }
+.repo .repo-name {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.repo .repo-name::before { content: "▸"; color: var(--accent); font-size: 12px; }
+.repo p { font-size: 13.5px; color: var(--text-2); }
+
+/* community / education */
+.plain-list { list-style: none; }
+.plain-list li {
+  font-size: 14.5px;
+  color: var(--text-2);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.plain-list li::before { content: "–"; position: absolute; left: 0; color: var(--text-3); }
+.plain-list a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+.plain-list a:hover { border-bottom-style: solid; }
+
+/* footer */
+footer {
+  border-top: 1px solid var(--hairline);
+  padding-top: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+footer .cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1.2s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* entry animation */
+.fade-in { animation: rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .hl-grid, .repo-grid { grid-template-columns: 1fr; }
+  .skill-row { grid-template-columns: 1fr; gap: 4px; }
+  .skill-row .label { text-align: left; }
+  .job { padding-left: 20px; }
+  .job-time { margin-left: 0; width: 100%; }
+  .topbar { margin-bottom: 48px; }
+}
+</style>
 </head>
 
 <body>
+<div class="wrap">
 
-    <div id="page-wrap">
-        <div id="contact-info" class="vcard">
-
-            <h1 class="fn">Scott (syhlion)</h1>
-
-            <p>
-                Blog: <a class="email" href="https://blog.syhlion.tw" target="_blank">https://blog.syhlion.tw</a><br />
-                Linked In: <a class="email" href="https://www.linkedin.com/in/syhlion" target="_blank">https://www.linkedin.com/in/syhlion</a><br/>
-                GitHub: <a class="email" href="https://www.github.com/syhlion" target="_blank">https://www.github.com/syhlion</a>
-            </p>
-        </div>
-
-        <div id="objective">
-            <p>
-                Hello! I'm Scott, you can call me "syhlion".</p>
-               <p> I'm interested in Internet Technology .</p>
-
-        </div>
-
-        <div class="clear"></div>
-
-        <dl>
-            <dd class="clear"></dd>
-
-            <dt>Education</dt>
-            <dd>
-                <h2>B.A. in Multimedia Design <br/>
-                National Taichung University of Science and Technology</h2>
-            </dd>
-
-            <dd class="clear"></dd>
-
-            <dt class="skills">Skills</dt>
-            <dd>
-                <h2>Technical Skills</h2>
-                <ul>
-                    <li>Programming: golang、PHP、lua</li>
-                    <li>RMDBS: mysql</li>
-                    <li>Nosql: scylla、redis</li>
-                    <li>Infrastructure:nginx、k8s、docker、helm、istio、ELK</li>
-                    <li>CI/CD: drone</li>
-                    <li>Quene: nsq</li>
-                    <li>Version Control: git</li>
-                    <li>Others: devops、Software Architecture Design</li>
-                    <li>Cloudplatform:GCP</li>
-                </ul>
-            </dd>
-            <dd class="clear"></dd>
-
-            <dt class="appraisals">Appraisals:</dt>
-            <dd>
-                <h2>Appraisals:</h2>
-                <ul>
-                    <li>12 years of experience in backend development</li>
-                    <li>12 years of experience in platform building</li>
-                    <li>6 years of experience in Golang development</li>
-                    <li>3 years of experience leading a backend team of 15+ members in product development and technical operations</li>
-                    <li>Cross-department collaboration: Collaborated with project teams, frontend engineering teams, management, and external partners such as payment providers to discuss detailed specifications and analyze actual needs.</li>
-                    <li>Team building: Built a team from scratch by selecting engineers from other teams and recruiting 3-4 additional members, as well as retaining colleagues from other teams who were considering leaving. Managed a team of up to 15 people, and as part of a recent company merger, merged the team with another engineering team and system, resulting in a team size of 20 people.</li>
-                    <li>Management experience: Managed a team of up to 20 people, including data engineers, infra engineers, SRE engineers, DBA engineers, and product development engineers, and led the team in building and operating a new product for the past 3 years.</li>
-                    <li>Community Involvement: I have participated in three ithome Ironman technical article creation competitions, and led a team to participate in two of them.
-                        <a class="email" href="https://ithelp.ithome.com.tw/users/20092379" target="_blank">My record in the Ironman competition</a>
-                        <a class="email" href="https://ithelp.ithome.com.tw/2021ironman/signup/team/175" target="_blank">Team competition award record</a></li>
-                </ul>
-            </dd>
-
-            <dd class="clear"></dd>
-
-            <dt class="experience">Experience</dt>
-            <dd>
-
-            	<h2>CHUNGYO GROUP<span>Team Leader - Taiwan, Taichung - 2018-now</span></h2>
-                <ul>
-                    <li>Led the creation of a new product from scratch by selecting talented individuals from other teams and guiding them in learning GCP and k8s while establishing a new CI/CD mechanism.</li>
-                    <li>Developed a cloud-native, distributed cron job system using Golang for the team's convenience. <a class="email" href="https://github.com/syhlion/gua" target="_blank">(GitHub - syhlion/gua: Support crontab style Schedule System implement by golang)</a></li>
-                    <li>Designed a comprehensive alert system after the product went live, which sends warnings via Telegram and allows for bi-directional debugging to reduce engineers' on-call burden.</li>
-                    <li>Analyzed online systems in real-time and provided engineers with proper instructions to troubleshoot issues.</li>
-                    <li>Constantly evaluated new technologies for potential integration into the product to improve it.</li>
-                    <li>Trained team members in statistical data analysis to support online data analysis for product maintenance and new development.</li>
-                    <li>As part of a recent company merger, managed a team of nearly 20 individuals and integrated both new and legacy products while leveraging technology to reduce costs.</li>
-                </ul>
-
-            	<h2>CHUNGYO GROUP<span>Internet Developer - Taiwan, Taichung - 2014-2018</span></h2>
-                <ul>
-                    <li>In response to the company's exclusive use of PHP at the time, which made it difficult to use WebSocket technology, I taught myself Golang and created a WebSocket server that can be used with any language through REST APIs <a class="email" href="https://github.com/syhlion/gusher" target="_blank">(GitHub - syhlion/gusher: Pusher Implement server-side by go)</a>. The following year, I revamped it to a cluster version to comply with the trend of containerization <a class="email" href="https://github.com/syhlion/gusher.cluster" target="_blank">(GitHub - syhlion/gusher.cluster: gusher plus version, support cluster)</a>. It is currently used by all products within the department, with a peak concurrent user count of up to 20,000 people.</li>
-                    <li>I also assisted in rewriting some features of old products from PHP to Golang, resulting in a performance improvement of more than 10 times and a corresponding 10-fold reduction in machine costs.</li>
-                </ul>
-
-                <h2>Guanhuasoft<span>C# Web Developer - Taiwan, Taichung - 2013-2014</span></h2>
-                <ul>
-                    <li>Assisted the company in building a new gaming platform using C#.NET development and SQL Server.</li>
-                </ul>
-
-                <h2>Runewaker<span>PHP Web Developer - Taiwan, Taichung - 2011-2013</span></h2>
-                <ul>
-                    <li>At that time, the company's main development of MMO RPG games were all handled by other distributors for operation. However, the Taiwan team wanted to operate the games themselves, so they invited me to develop and plan the entire game platform from scratch.</li>
-                </ul>
-
-                <h2>富格曼科技<span>PHP Web Developer - Taiwan,Taipei - 2010-2011</span></h2>
-                <ul>
-                    <li>Assisted the company in integrating various types of games into the company's gaming platform, allowing Taiwanese players to top up and play. Developed various event programs in collaboration with event planners.</li>
-                </ul>
-            </dd>
-
-            <dd class="clear"></dd>
-
-            <dt class="hobbies">Hobbies</dt>
-            <dd>
-            	<ul>
-                    <li>workout</li>
-                    <li>play video game</li>
-                    <li>read Jin Yong's novels</li>
-                </ul>
-			</dd>
-
-            <dd class="clear"></dd>
-
-            <dt>References</dt>
-            <dd>Available on request</dd>
-
-            <dd class="clear"></dd>
-        </dl>
-
-        <div class="clear"></div>
-
+  <div class="topbar">
+    <div class="host"><b>syhlion.tw</b> — personal site</div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
     </div>
+  </div>
 
+  <header class="hero fade-in">
+    <div class="prompt"><span class="dollar">$</span> whoami</div>
+    <h1>Scott Hsieh <span class="alias">(syhlion)</span></h1>
+    <p class="tagline" data-key="tagline"></p>
+    <div class="links">
+      <a href="https://blog.syhlion.tw" target="_blank" rel="noopener">blog.syhlion.tw<span class="arrow">↗</span></a>
+      <a href="https://www.linkedin.com/in/syhlion" target="_blank" rel="noopener">linkedin/syhlion<span class="arrow">↗</span></a>
+      <a href="https://github.com/syhlion" target="_blank" rel="noopener">github/syhlion<span class="arrow">↗</span></a>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_highlight"></h2>
+    <div class="hl-grid" id="highlights"></div>
+  </section>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_experience"></h2>
+    <div id="jobs"></div>
+  </section>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_skills"></h2>
+    <div class="skill-rows" id="skills"></div>
+  </section>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_oss"></h2>
+    <div class="repo-grid" id="repos"></div>
+  </section>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_community"></h2>
+    <ul class="plain-list" id="community"></ul>
+  </section>
+
+  <section>
+    <h2 class="sec-title" data-key="sec_education"></h2>
+    <ul class="plain-list" id="education"></ul>
+  </section>
+
+  <footer>
+    <span data-key="footer_left"></span>
+    <span><span data-key="footer_right"></span> <span class="cursor"></span></span>
+  </footer>
+
+</div>
+
+<script>
+const I18N = {
+  zh: {
+    tagline: "後端工程師／架構師。13+ 年後端經驗、8 年 Golang，專注於分散式系統、高併發即時服務與雲端基礎架構。",
+    sec_highlight: "highlight",
+    sec_experience: "experience",
+    sec_skills: "skills",
+    sec_oss: "open-source",
+    sec_community: "community",
+    sec_education: "education",
+    footer_left: "© Scott Hsieh (syhlion)",
+    footer_right: "built with plain html/css",
+  },
+  en: {
+    tagline: "Backend engineer & architect. 13+ years in backend, 8 years in Golang — distributed systems, high-concurrency realtime services, and cloud infrastructure.",
+    sec_highlight: "highlight",
+    sec_experience: "experience",
+    sec_skills: "skills",
+    sec_oss: "open-source",
+    sec_community: "community",
+    sec_education: "education",
+    footer_left: "© Scott Hsieh (syhlion)",
+    footer_right: "built with plain html/css",
+  },
+};
+
+const HIGHLIGHTS = [
+  {
+    zh: { t: "架構設計", d: "主導 MMORPG 遊戲平台、博弈系統與旅宿 Channel Manager 大型系統的整體設計與優化。" },
+    en: { t: "Architecture", d: "Led end-to-end design of MMORPG platforms, gaming systems, and a hospitality channel manager." },
+  },
+  {
+    zh: { t: "Golang 高效能開發", d: "開發分散式 Cronjob（gua）與 WebSocket 服務（gusher.cluster），舊系統改寫後效能提升 10 倍以上。" },
+    en: { t: "High-performance Go", d: "Built a distributed cron system (gua) and WebSocket service (gusher.cluster); legacy rewrites gained 10x+ performance." },
+  },
+  {
+    zh: { t: "團隊領導", d: "曾管理 15–18 人技術團隊，推動 CI/CD、自動化部署與資安機制，跨部門協作經驗豐富。" },
+    en: { t: "Team leadership", d: "Managed teams of 15–18 engineers; drove CI/CD, deployment automation, security practices, and cross-team collaboration." },
+  },
+  {
+    zh: { t: "雲端與容器化運維", d: "精通 GCP／AWS、Kubernetes、Docker、Helm 與 Istio，實現多雲部署與自動化彈性伸縮。" },
+    en: { t: "Cloud & containers", d: "GCP/AWS, Kubernetes, Docker, Helm, and Istio — multi-cloud deployments with automated scaling." },
+  },
+];
+
+const JOBS = [
+  {
+    current: true,
+    time: "2025/9 – now",
+    zh: {
+      co: "向上集團", role: "資深研發經理",
+      dept: "系統研發部 — 線上遊戲供應商中間層平台（帳務／注單核心、多環境 K8s 部署、16+ repo 多語言系統）的架構治理與技術營運",
+      items: [
+        "架構知識治理：從零建立涵蓋 16+ repo（C#/.NET、Node.js、Go、Dataform）的架構知識庫——業務流程、服務俯瞰圖、部署事實矩陣、資料儲存導覽；建立「以 proto 契約＋程式碼＋實際叢集部署為真相來源」的文件校正流程。",
+        "對外串接文件重建：主導重寫遊戲商串接文件（平台方 HTTP 接口手冊 9 章＋遊戲方 gRPC 共用規範與 12 個工作室，約 200+ 頁），並制定內外資訊隔離的發佈規範。",
+        "雲端成本優化：主導 MongoDB Atlas 與 GCP（GKE/BigQuery/Cloud NAT）成本分析，定位每月可節省約 15–25% 的具體槓桿；單項 BigQuery 資料品質檢核改寫後掃描量降低 92%，並追根資料庫寫入放大是機型無法降級的根因。",
+        "資料架構重構提案：盤點資料湖各管線（CDC→Kafka→PostgreSQL/BigQuery）的實際讀者與查詢形態，提出「儲存形態跟著查詢形態走」的重構方案，避免引入不必要的新資料庫。",
+        "線上事故根因分析：多起生產事故深度 RCA（V8 陣列上限 crash、跨服務錯誤碼映射缺漏的帳務缺陷、建索引卡死 startup probe 的 CrashLoop 等）；建立跨 8 個環境的版本查核與 log 排查工具鏈。",
+        "AI 工程效率導入：設計並落地團隊的 AI agent skill 生態（唯讀架構知識底座 → RD 操作層 → 管理層），涵蓋部署查核、叢集/ELK 排查、日結週報自動化與 PM 分診工作流，並確立知識庫與 workflow 的擁有權切分。",
+      ],
+    },
+    en: {
+      co: "XS Group", role: "Senior R&D Manager",
+      dept: "System R&D Dept. — architecture governance & technical operations for an online game provider middleware platform (wallet/wager core, multi-env K8s, 16+ polyglot repos)",
+      items: [
+        "Architecture knowledge governance: built from scratch a knowledge base covering 16+ repos (C#/.NET, Node.js, Go, Dataform) — business flows, service maps, deployment fact matrix, data storage guide — with a doc-verification process using proto contracts, code, and live cluster state as the source of truth.",
+        "External integration docs rebuild: led the rewrite of game-provider integration docs (9-chapter platform HTTP manual + shared gRPC spec across 12 studios, 200+ pages), with publishing rules that isolate internal information.",
+        "Cloud cost optimization: led MongoDB Atlas and GCP (GKE/BigQuery/Cloud NAT) cost analysis, identifying 15–25% monthly savings levers; one BigQuery data-quality check was rewritten to cut scan volume by 92%; traced database write amplification as the root cause blocking instance downgrades.",
+        "Data architecture refactoring proposal: audited data-lake pipelines (CDC→Kafka→PostgreSQL/BigQuery) by actual readers and query shapes, proposing a 'storage follows query shape' plan that avoids introducing unnecessary new databases.",
+        "Production incident RCA: deep root-cause analyses (a crash from exceeding V8's array limit, a billing defect from missing cross-service error-code mapping, a CrashLoop from index builds blocking startup probes); built version-audit and log tooling across 8 environments.",
+        "AI engineering enablement: designed and shipped the team's AI agent skill ecosystem (read-only architecture base → RD ops layer → management layer), covering deployment audits, cluster/ELK debugging, automated dev reports, and a PM triage workflow, with clear knowledge/workflow ownership boundaries.",
+      ],
+    },
+  },
+  {
+    time: "2023/6 – 2025/8",
+    zh: { co: "敦謙國際（集團）", role: "研發經理（兼派駐子公司技術長）" },
+    en: { co: "Dunqian International (Group)", role: "R&D Manager (concurrent CTO at subsidiary)" },
+    phases: [
+      {
+        time: "2024/9 – 2025/8",
+        zh: {
+          role: "技術長", note: "派駐子公司 創炎資訊",
+          items: [
+            "由集團指派進駐子公司，負責整體營運與技術決策，將母公司開發的旅宿通路管理系統帶入並與原有產品整合。",
+            "整合子公司舊有系統（AWS）並完成跨雲遷移。",
+            "管理 18 人團隊（前端、後端、Infra、業務），提升技術團隊運作效率。",
+            "探索新商業模式，拓展市場機會。",
+          ],
+        },
+        en: {
+          role: "CTO", note: "Assigned to subsidiary Chuangyan Info",
+          items: [
+            "Assigned by the group to run the subsidiary — owned overall operations and technical direction, integrating the parent company's channel manager with existing products.",
+            "Consolidated the subsidiary's legacy systems (AWS) and completed a cross-cloud migration.",
+            "Managed an 18-person team (frontend, backend, infra, sales).",
+            "Explored new business models and market opportunities.",
+          ],
+        },
+      },
+      {
+        time: "2023/6 – 2025/8",
+        zh: {
+          role: "研發經理", note: "母公司",
+          items: [
+            "從零打造旅宿通路管理系統（Hexa.tw）。",
+            "建立完整 Infra 架構：GCP、CI/CD、自動化部署與資安機制。",
+            "競品分析與功能優化，提升市場競爭力。",
+            "直接管理 10 人技術團隊（前端、後端、Infra）。",
+          ],
+        },
+        en: {
+          role: "R&D Manager", note: "Parent company",
+          items: [
+            "Built a hospitality channel manager (Hexa.tw) from scratch.",
+            "Established the full infra stack: GCP, CI/CD, deployment automation, and security.",
+            "Ran competitive analysis to sharpen product features.",
+            "Directly managed a 10-person team (frontend, backend, infra).",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    time: "2014/3 – 2023/5",
+    zh: {
+      co: "中佑資訊", role: "資深工程師 → Team Leader",
+      items: [
+        "管理 15 人後端技術團隊（後端、Infra、DBA），推動技術升級與架構優化。",
+        "帶領團隊導入 GCP、Kubernetes，建立 CI/CD 機制。",
+        "以 Golang 開發分散式 Cronjob 系統 <a href='https://github.com/syhlion/gua' target='_blank' rel='noopener'>gua</a>，提升任務排程效率。",
+        "以 Golang 開發 WebSocket Server <a href='https://github.com/syhlion/gusher.cluster' target='_blank' rel='noopener'>gusher.cluster</a>，支援 2 萬人同時在線。",
+        "設計 Telegram 警示系統，可遠端排錯，降低 On-call 負擔。",
+        "將舊有 PHP 系統改寫為 Golang，效能提升 10 倍以上，降低伺服器成本。",
+      ],
+    },
+    en: {
+      co: "Chungyo Info", role: "Senior Engineer → Team Leader",
+      items: [
+        "Managed a 15-person backend team (backend, infra, DBA); drove tech upgrades and architecture work.",
+        "Led GCP and Kubernetes adoption; established CI/CD.",
+        "Built <a href='https://github.com/syhlion/gua' target='_blank' rel='noopener'>gua</a>, a distributed cron system in Go.",
+        "Built <a href='https://github.com/syhlion/gusher.cluster' target='_blank' rel='noopener'>gusher.cluster</a>, a WebSocket server sustaining 20k concurrent users.",
+        "Designed a Telegram alerting system with remote debugging to cut on-call load.",
+        "Rewrote legacy PHP systems in Go — 10x+ performance, lower server costs.",
+      ],
+    },
+  },
+  {
+    time: "2013/3 – 2014/1",
+    zh: { co: "貫華科技", role: "資深工程師", items: ["以 C#.NET 與 SQL Server 協助打造新遊戲平台。"] },
+    en: { co: "Guanhuasoft", role: "Senior Engineer", items: ["Helped build a new gaming platform with C#.NET and SQL Server."] },
+  },
+  {
+    time: "2011/8 – 2013/2",
+    zh: { co: "思維工坊", role: "工程師", items: ["從零開發並規劃 MMORPG 遊戲平台，供台灣自營使用。"] },
+    en: { co: "Runewaker", role: "Engineer", items: ["Designed and built an MMORPG game platform from scratch for Taiwan self-operation."] },
+  },
+  {
+    time: "2010/9 – 2011/7",
+    zh: { co: "富格曼科技", role: "工程師", items: ["串接各類代理遊戲（MMO、網頁遊戲）至公司平台，並協助活動企劃程式開發。"] },
+    en: { co: "Fugman Tech", role: "Engineer", items: ["Integrated licensed games (MMO, web games) into the company platform; built event-campaign features."] },
+  },
+];
+
+const SKILLS = [
+  { label: "language", chips: ["Golang", "PHP", "Lua"], hot: ["Golang"] },
+  { label: "database", chips: ["MySQL", "ScyllaDB", "Redis"], hot: [] },
+  { label: "infra", chips: ["Kubernetes", "Docker", "Helm", "Istio", "Nginx", "ELK"], hot: ["Kubernetes"] },
+  { label: "cloud", chips: ["GCP", "AWS"], hot: [] },
+  { label: "pipeline", chips: ["Drone CI", "NSQ", "Git"], hot: [] },
+  { label: "others", chips: ["DevOps", "Software Architecture"], hot: [] },
+];
+
+const REPOS = [
+  {
+    name: "syhlion/gua",
+    url: "https://github.com/syhlion/gua",
+    zh: "分散式 Cronjob 服務 — crontab 風格的排程系統，穩定的任務排程管理。",
+    en: "Distributed cron service — crontab-style scheduling with reliable job management.",
+  },
+  {
+    name: "syhlion/gusher.cluster",
+    url: "https://github.com/syhlion/gusher.cluster",
+    zh: "自架 Pusher — 分散式 WebSocket 服務，支援高併發即時通訊（峰值 2 萬人同時在線）。",
+    en: "Self-hosted Pusher — distributed WebSocket service for high-concurrency realtime messaging (20k peak concurrent).",
+  },
+  {
+    name: "syhlion/redisocket.v2",
+    url: "https://github.com/syhlion/redisocket.v2",
+    zh: "gusher 的 WebSocket 引擎函式庫，基於 Redis Pub/Sub。",
+    en: "The WebSocket engine library behind gusher, built on Redis Pub/Sub.",
+  },
+];
+
+const COMMUNITY = [
+  {
+    zh: "參加 iThome 鐵人賽 3 次，並帶領團隊參賽 — <a href='https://ithelp.ithome.com.tw/users/20092379' target='_blank' rel='noopener'>個人參賽紀錄</a>",
+    en: "Competed in the iThome Ironman contest three times, twice leading a team — <a href='https://ithelp.ithome.com.tw/users/20092379' target='_blank' rel='noopener'>my record</a>",
+  },
+  {
+    zh: "2021 iThome 鐵人賽團隊獲獎 — <a href='https://ithelp.ithome.com.tw/2021ironman/signup/team/175' target='_blank' rel='noopener'>得獎紀錄</a>",
+    en: "2021 iThome Ironman team award — <a href='https://ithelp.ithome.com.tw/2021ironman/signup/team/175' target='_blank' rel='noopener'>award record</a>",
+  },
+];
+
+const EDUCATION = [
+  {
+    zh: "國立台中科技大學 — 多媒體設計系（2005/9 – 2009/6）",
+    en: "National Taichung University of Science and Technology — B.A. in Multimedia Design (2005/9 – 2009/6)",
+  },
+];
+
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function render(lang) {
+  const t = I18N[lang];
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    el.textContent = t[el.dataset.key] || "";
+  });
+
+  document.getElementById("highlights").innerHTML = HIGHLIGHTS.map((h) => {
+    const c = h[lang];
+    return `<div class="hl-card"><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p></div>`;
+  }).join("");
+
+  document.getElementById("jobs").innerHTML = JOBS.map((j) => {
+    const c = j[lang];
+    const body = j.phases
+      ? j.phases.map((p) => {
+          const pc = p[lang];
+          return `<div class="phase">
+            <div class="phase-head">
+              <span class="job-role">${esc(pc.role)}</span>
+              ${pc.note ? `<span class="phase-note">${esc(pc.note)}</span>` : ""}
+              <span class="job-time">${esc(p.time)}</span>
+            </div>
+            <ul>${pc.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+          </div>`;
+        }).join("")
+      : `<ul>${c.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+    return `<div class="job${j.current ? " current" : ""}">
+      <div class="job-head">
+        <h3>${esc(c.co)}</h3>
+        ${c.role ? `<span class="job-role">${esc(c.role)}</span>` : ""}
+        <span class="job-time">${esc(j.time)}</span>
+      </div>
+      ${c.dept ? `<div class="job-dept">${esc(c.dept)}</div>` : ""}
+      ${body}
+    </div>`;
+  }).join("");
+
+  document.getElementById("skills").innerHTML = SKILLS.map((s) =>
+    `<div class="skill-row">
+      <span class="label">${esc(s.label)}</span>
+      <span class="chips">${s.chips.map((c) =>
+        `<span class="chip${s.hot.includes(c) ? " hot" : ""}">${esc(c)}</span>`).join("")}</span>
+    </div>`
+  ).join("");
+
+  document.getElementById("repos").innerHTML = REPOS.map((r) =>
+    `<a class="repo" href="${r.url}" target="_blank" rel="noopener">
+      <div class="repo-name">${esc(r.name)}</div>
+      <p>${esc(r[lang])}</p>
+    </a>`
+  ).join("");
+
+  document.getElementById("community").innerHTML = COMMUNITY.map((c) => `<li>${c[lang]}</li>`).join("");
+  document.getElementById("education").innerHTML = EDUCATION.map((c) => `<li>${esc(c[lang])}</li>`).join("");
+
+  document.getElementById("btn-zh").classList.toggle("active", lang === "zh");
+  document.getElementById("btn-en").classList.toggle("active", lang === "en");
+  document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+}
+
+function setLang(lang) {
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  render(lang);
+}
+
+let saved = "zh";
+try { saved = localStorage.getItem("lang") || "zh"; } catch (e) {}
+render(saved === "en" ? "en" : "zh");
+</script>
 </body>
 </html>
