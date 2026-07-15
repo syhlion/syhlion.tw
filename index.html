@@ -420,9 +420,18 @@ footer .cursor {
 </div>
 
 <script>
+function yearsSince(y, m) {
+  const now = new Date();
+  let yrs = now.getFullYear() - y;
+  if (now.getMonth() + 1 < m) yrs--;
+  return yrs;
+}
+const BE_YEARS = yearsSince(2010, 9);   // 入行 2010/9
+const GO_YEARS = yearsSince(2017, 1);   // Golang 2017 起
+
 const I18N = {
   zh: {
-    tagline: "後端工程師／架構師。15+ 年後端經驗、9 年 Golang，專注於分散式系統、高併發即時服務與雲端基礎架構。",
+    tagline: `後端工程師／架構師。${BE_YEARS}+ 年後端經驗、${GO_YEARS} 年 Golang，專注於分散式系統、高併發即時服務與雲端基礎架構。`,
     quote1: "沒有 100 分的架構，只有最適合的架構；",
     quote2: "沒有 100 分的方案，只有最適合的方案。",
     sec_highlight: "highlight",
@@ -435,7 +444,7 @@ const I18N = {
     footer_right: "built with plain html/css",
   },
   en: {
-    tagline: "Backend engineer & architect. 15+ years in backend, 9 years in Golang — distributed systems, high-concurrency realtime services, and cloud infrastructure.",
+    tagline: `Backend engineer & architect. ${BE_YEARS}+ years in backend, ${GO_YEARS} years in Golang — distributed systems, high-concurrency realtime services, and cloud infrastructure.`,
     quote1: "There is no perfect architecture — only the one that fits;",
     quote2: "no perfect solution — only the one that fits.",
     sec_highlight: "highlight",
