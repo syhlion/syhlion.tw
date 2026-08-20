@@ -477,8 +477,8 @@ const HIGHLIGHTS = [
   },
   {
     wide: true,
-    zh: { t: "AI 導入評估與協作", d: "評估並導入 AI agent 工具鏈到工程流程——架構知識庫、部署查核、線上排查、報表自動化。核心信念：人與 AI 應該是協作加速，而不是誰取代誰。" },
-    en: { t: "AI adoption & collaboration", d: "Evaluates and integrates AI agent toolchains into engineering workflows — architecture knowledge bases, deployment audits, production debugging, automated reporting. Core belief: humans and AI accelerate each other through collaboration — neither replaces the other." },
+    zh: { t: "AI 整合、規劃與 Skill 分配設計", d: "規劃團隊的 AI agent skill 分層架構（知識底座 → RD 操作層 → 管理層／PM 層），依賴方向單向、每層權限對齊使用它的角色；以使用紀錄量測觸發率，把需要每次生效的政策檢查改寫成執行層 hook。日常也以 agent 完成規格轉實作（vibe coding）與跨語言重構，人負責定驗收條件與把關。核心信念：人與 AI 應該是協作加速，而不是誰取代誰。" },
+    en: { t: "AI integration, planning & skill design", d: "Designs the team's layered AI agent skill architecture (knowledge base → RD ops → management/PM), with one-way dependencies and permissions matched to each role; measures trigger rates from usage logs and moves always-on policy checks into runtime hooks. Day to day, agents turn specs into code (vibe coding) and drive cross-language rewrites, while humans define the acceptance criteria and sign off. Core belief: humans and AI accelerate each other through collaboration — neither replaces the other." },
   },
 ];
 
@@ -487,27 +487,31 @@ const JOBS = [
     current: true,
     time: "2025/9 – now",
     zh: {
-      co: "向上集團", role: "資深研發經理",
-      dept: "系統研發部 — 線上遊戲供應商中間層平台（帳務／注單核心、多環境 K8s 部署、16+ repo 多語言系統）的架構治理與技術營運",
+      co: "知名遊戲集團", role: "資深研發經理",
+      dept: "系統研發部 — 線上遊戲供應商中間層平台（帳務核心、多環境 K8s 部署、16+ repo 多語言系統）的架構治理與技術營運",
       items: [
         "架構知識治理：從零建立涵蓋 16+ repo（C#/.NET、Node.js、Go、Dataform）的架構知識庫——業務流程、服務俯瞰圖、部署事實矩陣、資料儲存導覽；建立「以 proto 契約＋程式碼＋實際叢集部署為真相來源」的文件校正流程。",
         "對外串接文件重建：主導重寫遊戲商串接文件（平台方 HTTP 接口手冊 9 章＋遊戲方 gRPC 共用規範與 12 個工作室，約 200+ 頁）。",
         "雲端成本分析：分析 MongoDB Atlas 與 GCP（GKE/BigQuery）成本結構並提出優化方向；其中單項 BigQuery 資料品質檢核經改寫後掃描量降低 92%。",
+        "通訊協定與服務發現改版：主導帳務核心對外協定新版契約定案（改為自包含、減少每局呼叫次數），以及服務治理層改版（以透明轉發閘道取代舊 RPC 框架，遊戲端零改動）；兩案都經多輪設計評審收斂並留下決策紀錄。",
         "資料架構重構研究：盤點資料湖管線（CDC→Kafka→PostgreSQL/BigQuery）的使用現況與查詢形態，研擬「儲存形態跟著查詢形態走」的重構方向（進行中）。",
         "線上事故根因分析：多起生產事故深度 RCA（V8 陣列上限 crash、跨服務錯誤碼映射缺漏的帳務缺陷、建索引卡死 startup probe 的 CrashLoop 等）；建立跨 8 個環境的版本查核與 log 排查工具鏈。",
-        "AI 工程效率導入：設計並落地團隊的 AI agent skill 生態（唯讀架構知識底座 → RD 操作層 → 管理層），涵蓋部署查核、叢集/ELK 排查、日結週報自動化與 PM 分診工作流，並確立知識庫與 workflow 的擁有權切分。",
+        "AI 工程效率導入：設計並落地團隊的 AI agent skill 分層架構（唯讀架構知識底座 → RD 操作層 → 管理層／PM 層），涵蓋部署查核、叢集/ELK 排查、日結週報自動化與需求分診工作流，並確立知識庫與 workflow 的擁有權切分。",
+        "用 AI 做跨語言重構：把一支 C# 帳務服務改寫成 Go，先釘死舊版本當對照基準、列出必須逐位元相同的比對項目（對外回應、資料庫寫入、資料變更事件、對外呼叫、log），再把典型情境寫成可重跑案例並各配負向對照；AI 負責轉換與逐輪修正，人判定哪些差異是缺陷、哪些是刻意保留。同時訂 Go 實作規範並把分層依賴做成 CI 閘門。",
       ],
     },
     en: {
-      co: "XS Group", role: "Senior R&D Manager",
-      dept: "System R&D Dept. — architecture governance & technical operations for an online game provider middleware platform (wallet/wager core, multi-env K8s, 16+ polyglot repos)",
+      co: "A leading gaming group", role: "Senior R&D Manager",
+      dept: "System R&D Dept. — architecture governance & technical operations for an online game provider middleware platform (wallet core, multi-env K8s, 16+ polyglot repos)",
       items: [
         "Architecture knowledge governance: built from scratch a knowledge base covering 16+ repos (C#/.NET, Node.js, Go, Dataform) — business flows, service maps, deployment fact matrix, data storage guide — with a doc-verification process using proto contracts, code, and live cluster state as the source of truth.",
         "External integration docs rebuild: led the rewrite of game-provider integration docs (9-chapter platform HTTP manual + shared gRPC spec across 12 studios, 200+ pages).",
         "Cloud cost analysis: analyzed MongoDB Atlas and GCP (GKE/BigQuery) cost structure and proposed optimizations; one BigQuery data-quality check was rewritten to cut scan volume by 92%.",
+        "Protocol & service-discovery redesign: led the new self-contained contract for the accounting core's outbound protocol (fewer calls per round) and a service-governance revamp (a transparent forwarding gateway replacing the legacy RPC framework, with zero changes on the game side); both converged through multiple design reviews with decisions on record.",
         "Data architecture refactoring research (in progress): surveying data-lake pipelines (CDC→Kafka→PostgreSQL/BigQuery) by usage and query shapes, drafting a 'storage follows query shape' direction.",
         "Production incident RCA: deep root-cause analyses (a crash from exceeding V8's array limit, a billing defect from missing cross-service error-code mapping, a CrashLoop from index builds blocking startup probes); built version-audit and log tooling across 8 environments.",
-        "AI engineering enablement: designed and shipped the team's AI agent skill ecosystem (read-only architecture base → RD ops layer → management layer), covering deployment audits, cluster/ELK debugging, automated dev reports, and a PM triage workflow, with clear knowledge/workflow ownership boundaries.",
+        "AI engineering enablement: designed and shipped the team's layered AI agent skill architecture (read-only architecture base → RD ops → management/PM), covering deployment audits, cluster/ELK debugging, automated dev reports, and a request triage workflow, with clear knowledge/workflow ownership boundaries.",
+        "AI-driven cross-language rewrite: ported a C# accounting service to Go by defining acceptance first — pinning the old build as the baseline, listing what must match byte for byte (responses, database writes, change events, outbound calls, logs), then turning typical scenarios into repeatable cases each paired with a negative control. Agents did the conversion and iteration; humans ruled on which differences were defects and which were intentional. Also set the Go implementation standard and enforced layering in CI.",
       ],
     },
   },
@@ -604,11 +608,11 @@ const JOBS = [
 
 const SKILLS = [
   { label: "language", chips: ["Golang", "PHP", "Lua"], hot: ["Golang"] },
-  { label: "database", chips: ["MySQL", "ScyllaDB", "Redis"], hot: [] },
+  { label: "database", chips: ["MySQL", "PostgreSQL", "MongoDB", "ScyllaDB", "Redis"], hot: [] },
   { label: "infra", chips: ["Kubernetes", "Docker", "Helm", "Istio", "Nginx", "ELK"], hot: ["Kubernetes"] },
   { label: "cloud", chips: ["GCP", "AWS"], hot: [] },
-  { label: "pipeline", chips: ["Drone CI", "NSQ", "Git"], hot: [] },
-  { label: "ai", chips: ["AI Agent Toolchain", "Claude Code", "Workflow Automation"], hot: ["AI Agent Toolchain"] },
+  { label: "pipeline", chips: ["Kafka / CDC", "BigQuery", "NSQ", "Drone CI", "GitHub Actions", "Git"], hot: [] },
+  { label: "ai", chips: ["Agent Skill Design", "Claude Code", "Vibe Coding", "Workflow Automation"], hot: ["Agent Skill Design"] },
   { label: "others", chips: ["DevOps", "Software Architecture"], hot: [] },
 ];
 
